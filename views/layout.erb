@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Bitmaker CRM</h1>
+
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Add a Contact</a></li>
+          <li><a href="#">Delete a Contact</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main>
+      <%= yield %>
+
+    </main>
+
+    <footer>
+      <h3>Bitmaker 2017</h3>
+    </footer>
+
+    <!-- lets us dynamically insert other views in this file -->
+  </body>
+</html>
