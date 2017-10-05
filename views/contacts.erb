@@ -1,0 +1,20 @@
+<h1> List of Contacts: </h1>
+
+<ul>
+
+    <a href="http://localhost:4567/">Home</a>
+    <br>
+    <br>
+    
+    <%@all_contacts.each do |contact| %>
+      <li><%= contact.id %></li>
+      <li><%= contact.first_name %> </li>
+      <li><%=contact.last_name %></li>
+      <li><%= contact.email %></li>
+      <li><%= contact.note %></li>
+      <br>
+    <% end %>
+
+
+
+</ul>
