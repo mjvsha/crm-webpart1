@@ -14,14 +14,16 @@ list-style: none;
 header nav ul li {
   text-align: center;
   background-color: grey;
-  
+
 
 }
 
 footer {
-color: white;
-background-color: black;
-text-align: center;
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 3px;
+
 }
 
 
@@ -45,4 +47,9 @@ header nav a {
     text-decoration: none;
     font-weight: bold;
     color: white;
+}
+
+.contacts-count {
+    background-color: #ef4815;
+    color: black;
 }
