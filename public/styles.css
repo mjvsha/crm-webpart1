@@ -52,4 +52,5 @@ header nav a {
 .contacts-count {
     background-color: #ef4815;
     color: black;
+    padding: 5px;
 }

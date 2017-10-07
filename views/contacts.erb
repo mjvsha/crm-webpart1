@@ -5,16 +5,19 @@
 
 
 
-    <div style = "background-color: #ef4815; color: black; padding: 0.001px; ">
+    <!-- <div style = "background-color: #ef4815; color: black; padding: 0.001px; "> -->
 
     <h2 class = "contacts-count"> There are <%= @all_contacts.length %> contacts</h2>
 
-    </div>
+    <!-- </div> -->
 
     <%@all_contacts.each do |contact| %>
       <li style = "background-color: #61edc3; color: black; padding: 20px; font-weight: bold; list-style-type: none;  "><%= contact.first_name %> <%=contact.last_name %> (<%=contact.email %>) <br>
+
+
       <a href="#">Edit</a> | <a href="#">Delete</a></li>
-      
+      <a href="/contacts/<%=contact.id%>"> <%=contact.first_name %>'s page</a>
+
       <br>
     <% end %>
 
