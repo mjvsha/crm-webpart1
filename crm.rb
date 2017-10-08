@@ -22,6 +22,12 @@ get '/contacts' do
 end
 
 
+get '/contacts/new' do
+
+#this only works if i put it before the one below this 
+  erb :new
+end
+
 get '/contacts/:id' do
   #params[:id] params is a hash. id is the key and we retrieve the value from it
 
@@ -34,7 +40,7 @@ get '/contacts/:id' do
     raise Sinatra::NotFound
   end
 
-  
+
 
 end
 
@@ -46,8 +52,6 @@ get '/about' do
 
 
 end
-
-
 
 
 
