@@ -1,0 +1,17 @@
+<!-- #sinatra only operates with get nd post methods
+# you need to be able to trick the form to go to the right place
+
+a post request sends data to that speciic uri and then expects the resurce at that uri to handle the request
+a put request puts data at that specific uri and exactly at that uri  -->
+
+<form action = "/contacts/<%=@contact.id %>" method="post">
+  <input type="hidden" name="_method" value="post">
+  <fieldset>
+    <input type="text" name="first_name" value="<%= @contact.first_name %>">
+    <input type="text" name="last_name" value=" <%= @contact.last_name %>">
+    <input type="text" name="email" value="<%= @contact.email %>">
+    <input type="text" name="note" value="<%= @contact.note %>">
+    <input type="submit" name="submit" value="Edit Contact">
+  </fieldset>
+
+</form>

@@ -8,6 +8,13 @@ erb :index
 
 end
 
+get '/about' do
+
+  erb :about
+
+
+end
+
 get '/contacts' do
   @all_contacts = Contact.all
   #Model.all(options = nil) finds all the records matching the supplied options.
@@ -24,9 +31,11 @@ end
 
 get '/contacts/new' do
 
-#this only works if i put it before the one below this 
+#this only works if i put it before the one below this
   erb :new
 end
+
+
 
 get '/contacts/:id' do
   #params[:id] params is a hash. id is the key and we retrieve the value from it
@@ -46,13 +55,57 @@ end
 
 
 
-get '/about' do
+post '/contacts' do
+  Contact.create(
+    first_name:   params[:first_name],
+    last_name:    params[:last_name],
+    email:        params[:email],
+    note:         params[:note],
 
-  erb :about
+  )
 
+  redirect to ('/contacts')
+end
+
+get '/contacts/:id/edit' do
+
+  @contact = Contact.find_by(id: params[:id].to_i)
+
+  if @contact
+    erb :edit_contact
+  else
+    raise Sinatra: :NotFound
+
+  end
 
 end
 
+put '/contacts/:id' do
+  @contact = Contact.find_by(id: params[:id].to_i)
+    if @contact
+      @contact.update(
+      first_name:   params[:first_name],
+      last_name:    params[:last_name],
+      email:        params[:email],
+      note:         params[:note]
+      )
+    redirect to('/contacts')
+
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+delete '/contacts/:id' do
+  @contact= Contact.find(params[:id].to_i)
+    if @contact
+    @contact.delete
+    redirect to('/contacts')
+    else
+    raise Sinatra::NotFound
+  end 
+
+end
 
 
 

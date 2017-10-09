@@ -8,3 +8,13 @@
 <li>  <%= @contact.note %> </li>
 
 <br>
+
+<h5>Edit this contact</h5>
+<a href="/contacts/<%=@contact.id%>/edit">Edit this badboy</a>
+
+<h5>Delete this contact</h5>
+<form action="/contacts/<%=@contact.id%>" method="post" value = "delete">
+  <input type="hidden" name="_method" value = "delete">
+  <input type="submit" value="Delete contact">
+
+</form>
